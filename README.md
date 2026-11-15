@@ -1,4 +1,4 @@
-# Nikon D7500 firmware research - findings
+# Nikon D7500 firmware research notes
 
 Independent, non-commercial research into the Nikon D7500 (EXPEED 5) firmware
 container, update verification and feature surface.
@@ -32,6 +32,23 @@ All three now have evidence-backed answers. The camera was never flashed.
 
 Details: [FINDINGS.md](FINDINGS.md). Method: [METHOD.md](METHOD.md).
 
+## How to validate
+
+You need your own lawfully obtained firmware. Nothing is shipped here.
+
+1. Acquire the official D7500 C 1.12 image and hash it.
+2. Decrypt it with the upstream legacy-Nikon tooling.
+3. Check the space label at `0x20`, module count `3`, directory size `144`.
+4. Verify every module CRC and the package CRC (CRC-16/XMODEM). All must pass.
+5. Compare the table SHA-256 values in [FINDINGS.md](FINDINGS.md#2-obfuscation).
+6. Recompute `SHA1(body || K8)` if you have K8; the header cannot be checked
+   without it.
+7. For the feature table, extract UTF-16LE strings and count the exact phrases.
+8. For the emulator, run `tools/m0_unicorn.py <decrypted-image>` and expect
+   execution at `0x10000000`, then a dispatcher return or a fault at `0x0`.
+
+None of these steps requires modifying or flashing a camera.
+
 ## What is deliberately missing
 
 - Firmware binaries, decrypted images, module blobs.
@@ -42,6 +59,10 @@ Details: [FINDINGS.md](FINDINGS.md). Method: [METHOD.md](METHOD.md).
 Keys are withheld for legal reasons (see [LEGAL.md](LEGAL.md)). The method to
 recover them is public and credited below; the values are not redistributed
 here.
+
+K8 is not needed to verify the container, CRC or feature claims. Researchers
+who need it for interoperability work can contact the maintainer privately; it
+is deliberately not posted in this repository.
 
 ## Reproducing
 

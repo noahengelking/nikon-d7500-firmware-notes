@@ -52,6 +52,10 @@ K8 was recovered for the D7500 and verified against C 1.10, C 1.11 and
 C 1.12 - the same key works across all three versions. The value is
 **withheld** from this repository.
 
+The value is not required to reproduce the container, CRC or feature results.
+It can be shared privately with researchers working on interoperability, on
+request; it is intentionally not published.
+
 ## 4. Repacking
 
 A validation-only candidate was built by:

@@ -88,5 +88,11 @@ Nikon, D7500 and EXPEED are trademarks of their respective owners.
 
 ## License
 
-Code: MIT. Text and figures: CC BY 4.0. Upstream tools retain their own
-licenses.
+Code in `tools/`: [MIT](LICENSE).
+
+Text and figures: [CC BY 4.0](LICENSE-docs)
+(https://creativecommons.org/licenses/by/4.0/).
+
+Upstream projects keep their own licenses and are not bundled here:
+nikon-fw-key-tool (GPL-3.0), Nikon-Expeed-4-and-5-firmware-tool, Unicorn
+(BSD-2-Clause), Capstone (BSD-3-Clause).

@@ -1,0 +1,20 @@
+Documentation license
+
+The text and figures in this repository (README.md, FINDINGS.md, METHOD.md,
+CREDITS.md, LEGAL.md) are licensed under the Creative Commons Attribution 4.0
+International License (CC BY 4.0).
+
+You may share and adapt this material for any purpose, including commercially,
+provided you give appropriate credit, link to the license, and indicate if
+changes were made.
+
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution: "Nikon D7500 firmware research notes" by Noah Engelking, 2026.
+
+Code in tools/ is licensed under the MIT License; see LICENSE.
+
+Upstream projects referenced or used as dependencies keep their own licenses:
+nikon-fw-key-tool (GPL-3.0), Nikon-Expeed-4-and-5-firmware-tool (see its
+repository), Unicorn (BSD-2-Clause) and Capstone (BSD-3-Clause). No upstream
+code is bundled in this repository.

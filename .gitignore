@@ -1,0 +1,18 @@
+# Never commit firmware or anything derived from it
+*.bin
+*.dec
+*.dmg
+*.exe
+*.key.json
+*.sig.json
+*.modules/
+out/
+firmware/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# macOS
+.DS_Store
